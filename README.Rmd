@@ -1,0 +1,200 @@
+---
+output: md_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# Open Case Studies: Mental Health of American Youth
+
+<!-- badges: start -->
+[![render-README](https://github.com/opencasestudies/ocs-bp-youth-mental-health/workflows/render-README/badge.svg)](https://github.com/opencasestudies/ocs-bp-youth-mental-health/actions)
+[![render-index](https://github.com/opencasestudies/ocs-bp-youth-mental-health/workflows/render-index/badge.svg)](https://github.com/opencasestudies/ocs-bp-youth-mental-health/actions)
+<!-- badges: end -->
+
+### Important links 
+
+- HTML: https://www.opencasestudies.org/ocs-bp-youth-mental-health
+- GitHub: https://github.com/opencasestudies/ocs-bp-youth-mental-health
+- Bloomberg American Health Initiative: https://americanhealth.jhu.edu/open-case-studies
+
+### Disclaimer 
+
+The purpose of the [Open Case Studies](https://www.opencasestudies.org) 
+project is **to demonstrate
+the use of various data science methods, tools, and software in the
+context of messy, real-world data**. A given case study does not cover
+all aspects of the research process, is not claiming to be the most
+appropriate way to analyze a given dataset, and should not be used in
+the context of making policy decisions without external consultation
+from scientific experts.
+
+### License 
+
+This case study is part of the [Open Case Studies](https://www.opencasestudies.org) project. 
+This work is licensed under the Creative Commons Attribution-NonCommercial 3.0 ([CC BY-NC 3.0](https://creativecommons.org/licenses/by-nc/3.0/us/)) United States License.
+
+### Citation 
+
+To cite this case study:
+
+Wright, Carrie and Ontiveros, Michael and Jager, Leah and Taub, Margaret and Hicks, Stephanie C. (2020). https://github.com/opencasestudies/ocs-bp-youth-mental-health. Mental Health of American Youth.
+
+### Acknowledgments
+
+We would like to acknowledge [Tamar Mendelson](https://www.jhsph.edu/faculty/directory/profile/1770/tamar-mendelson) for assisting in framing the major direction of the case study.
+
+We would also like to acknowledge the [Bloomberg American Health Initiative](https://americanhealth.jhu.edu/) for funding this work. 
+
+### Title 
+
+Mental Health of American Youth
+
+### Motivation 
+
+Rates of depression appear to have been increasing among American youths since around 2010 according to a recent [report](https://content.apa.org/record/2019-12578-001){target="_blank"}. A [recent study](https://pubmed.ncbi.nlm.nih.gov/24285382/){target="_blank"}) also shows that youths appear to be seeking more care from mental health services.
+
+We will explore the rate of self-reported depression among American youths age 12-17 from roughly 2004 to 2018. We will also explore data about the rate at which youths that have experienced depression symptoms are receiving mental health services. We also investigate where youths are receiving care.
+
+### Motivating question
+
+1. How have depression rates in American youth changed since 2004, according to the NSDUH data? How have rates differed between different youth subgroups (age, gender, ethnicity)?
+2. Do mental health services appear to be reaching more youths? Again, how have rates differed between different youth subgroups (age, gender, ethnicity)?
+
+
+### Data   
+
+We will use data from the [National Survey on Drug Use and Health (NSDUH)](https://www.samhsa.gov/data/sites/default/files/cbhsq-reports/NSDUHDetailedTabs2018R2/NSDUHDetTabsSect11pe2018.htm){target="_blank"} about the mental health status of youths in the United States of America age 12-17.
+
+This annual survey is conducted by interviewers that go door to door to perform the survey. 
+
+See [here](https://nsduhweb.rti.org/respweb/about_nsduh.html){target="_blank"} for more details about the Survey 
+ and [here](https://www.samhsa.gov/data/sites/default/files/cbhsq-reports/NSDUHDetailedTabs2018R2/NSDUHDetailedTabs2018.pdf){target="_blank"}  for the  2018 NSDUH Survey report.
+
+Importantly, there is no obvious way to download the data directly from this [particular website](https://www.samhsa.gov/data/sites/default/files/cbhsq-reports/NSDUHDetailedTabs2018R2/NSDUHDetTabsSect11pe2018.htm). Thus, we demonstrate how to scrape the data directly from the website.
+
+#### Learning Objectives
+
+The skills, methods, and concepts that students will be familiar with by the end of this case study are:
+
+<u>**Data Science Learning Objectives:**</u>
+
+1. Scrape data directly from a website (`rvest`)  
+2. Subset and filter data (`dplyr`)  
+3. Write functions to wrangle data repetitively  
+4. Work with character strings (`stringr`)  
+5. Reshape data into different formats (`tidyr`)  
+6. Create data visualizations (`ggplot2`) with labels (`directlabels`) and facets for different groups  
+7. Combine multiple plots (`cowplot`)  
+8. Optional: Create an animated gif (`magick`)  
+
+<u>**Statistical Learning Objectives:**</u> 
+
+1. Discuss the impact of self-reporting bias on survey responses  
+2. Define and create a contingency table  
+3. Implementation of a chi-squared test for independence  
+4. Interpretation of a chi-squared test for independence  
+
+
+#### Data import 
+
+In this case study particularly covers data import directly from a website using [web scraping](https://en.wikipedia.org/wiki/Web_scraping?oldformat=true){target="_blank"}.
+
+#### Data wrangling
+
+This case study is covers many details about wrangling data from excel files with unusual header structures and with similar data in multiple tables within the same file. This involves using the `stringr` package to split, subset, detect, extract, and modify patterns of text. This also involves using the `tidyr` package to change data shape and using the `dplyr` package to summarize, select, filter, modify, and join data. They case study also covers using various `map_*()` functions of the `purrr` package to perform functions across tibbles within lists and the `across()` function of the `dplyr` package to perform functions across columns of an individual tibble. This case study provides especially diverse material about data wrangling.
+
+
+#### Data Visualization
+
+In this case study we provide a brief introduction to the `ggplot2` package and provide several examples of using the `directlabels` package to directly add labels to plots. We also demonstrate how to use the `dl.trans()` and `dl.move()` functions. We especially demonstrate how to visualize many overlapping groups longitudinally using direct labels and faceting. We also provide a thorough explanation of how to combine plots using the `cowplot` package. In doing so, we also demonstrate how to modify the layout of a legend using the `guides()` function of the `ggplot2` package.
+
+### Analysis
+
+In this case study we provide an introduction to the [Pearson's chi-squared test](https://en.wikipedia.org/wiki/Pearson%27s_chi-squared_test#:~:text=Pearson's%20chi%2Dsquared%20test%20is,differs%20from%20a%20theoretical%20distribution.){target="_blank"} for independence, as well as [contingency tables](https://en.wikipedia.org/wiki/Contingency_table){target="_blank"}. We demonstrate how to manually calculate the ${\chi}^2$ and degrees of freedom, as well as how to implement the test in R using the `chisq.test()` function of the `stats` package. We also discuss how to interpret the results. We perform the test to compare the frequency of individuals reporting a major depressive episode in the past year among two groups across two years.
+
+### Other notes and resources 
+
+[RStudio](https://rstudio.com/products/rstudio/features/){target="_blank"}  
+[Cheatsheet on RStuido IDE](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf){target="_blank"}  
+[Other RStudio cheatsheets](https://rstudio.com/resources/cheatsheets/){target="_blank"}   
+[Tidyverse](https://www.tidyverse.org/){target="_blank"}   
+[Selection bias](https://en.wikipedia.org/wiki/Selection_bias?oldformat=true){target="_blank"}  
+[Sampling methods](https://en.wikipedia.org/wiki/Sampling_(statistics)?oldformat=true){target="_blank"}   
+[Sampling frame](https://en.wikipedia.org/wiki/Sampling_frame?oldformat=true){target="_blank"}  
+[DSM 5](https://en.wikipedia.org/wiki/DSM-5){target="_blank"}</summary>    
+[National Survey on Drug Use and Health (NSDUH)](https://nsduhweb.rti.org/respweb/homepage.cfm){target="_blank"}   
+[Substance Abuse and Mental Health Services Administration (SAMHSA)](https://www.samhsa.gov/){target="_blank"}   
+[U.S. Department of Health and Human Services (DHHS)](https://www.hhs.gov/){target="_blank"}   
+[NSDUH Survey Results Website](https://www.samhsa.gov/data/sites/default/files/cbhsq-reports/NSDUHDetailedTabs2018R2/NSDUHDetTabsSect11pe2018.htm){target="_blank"} (where we got the data for this case study)    
+[Details about the Survey](https://nsduhweb.rti.org/respweb/about_nsduh.html){target="_blank"}  
+[Report about the 2018 NSDUH Survey](https://www.samhsa.gov/data/sites/default/files/cbhsq-reports/NSDUHDetailedTabs2018R2/NSDUHDetailedTabs2018.pdf){target="_blank"}  
+[Web scraping](https://en.wikipedia.org/wiki/Web_scraping?oldformat=true){target="_blank"}  
+[Selectorgadget Tool](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html){target="_blank"}  
+See this [blog post](http://research.libd.org/rstatsclub/post/introduction-to-scraping-and-wranging-tables-from-research-articles/#.Xw878ZNKhQJ){target="_blank"}, this [blog post](http://blog.corynissen.com/2015/01/using-rvest-to-scrape-html-table.html){target="_blank"}, and this [vignette](https://rstudio-pubs-static.s3.amazonaws.com/266430_f3fd4660b2744751ab144aa130768a06.html){target="_blank"} for more information about web scraping  
+[CSS selectors tutorial](http://flukeout.github.io/#){target="_blank"} (and the [answers](https://gist.github.com/chrisman/fcb0a88459cd98239dbe6d2d200b02d1){target="_blank"})     
+[Piping in R](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html){target="_blank"}   
+[Writing functions](https://r4ds.had.co.nz/functions.html){target="_blank"}
+Also see [this case study](https://www.opencasestudies.org/ocs-bp-vaping-case-study/){target="_blank"}  for more information on writing functions.   
+[String manipulation cheatsheet](https://rstudio.com/resources/cheatsheets/){target="_blank"}  
+[Table formats](https://en.wikipedia.org/wiki/Wide_and_narrow_data){target="_blank"}
+[Pearson's chi-squared test](https://en.wikipedia.org/wiki/Pearson%27s_chi-squared_test#:~:text=Pearson's%20chi%2Dsquared%20test%20is,differs%20from%20a%20theoretical%20distribution.){target="_blank"}  
+[contingency table](https://en.wikipedia.org/wiki/Contingency_table){target="_blank"}  
+[Chi-square distribution](https://en.wikipedia.org/wiki/Chi-squared_test#/media/File:Chi-square_distributionCDF-English.png){target="_blank"}  
+[chi-square distribution applet](http://homepage.divms.uiowa.edu/~mbognar/applets/chisq.html){target="_blank"}  
+See here for a more thorough explanation of the [chi-square test](https://www.ling.upenn.edu/~clight/chisquared.htm){target="_blank"}   
+[`ggplot2` package](http://ggplot2.tidyverse.org){target="_blank"}    
+Please see [this case study](https://www.opencasestudies.org/ocs-bp-co2-emissions/){target="_blank"}  for more details on using `ggplot2`. 
+[grammar of graphics](http://vita.had.co.nz/papers/layered-grammar.html){target="_blank"}  
+[`ggplot2` themes](https://ggplot2.tidyverse.org/reference/ggtheme.html){target="_blank"}   
+[`directlabels` package methods](http://directlabels.r-forge.r-project.org/docs/index.html){target="_blank"}  
+[Viridis palette for colorblind friendly plots](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html){target="_blank"}  
+[Motivating article for this case study about depression rates](https://pubmed.ncbi.nlm.nih.gov/30869927/){target="_blank"} (Access is possible for those at Hopkins by using their email address)    
+
+[Motivating article about the rate of youths seeking mental health services](https://pubmed.ncbi.nlm.nih.gov/24285382/){target="_blank"}    
+
+[Cross-cultural review article about possible causes for increased depression](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3330161/){target="_blank"}
+
+[Review article about social media and depression](https://childmind.org/article/is-social-media-use-causing-depression/){target="_blank"}
+
+
+<u>**Packages used in this case study:** </u>
+
+ Package   | Use in this case study                                                                       
+---------- |-------------
+[here](https://github.com/jennybc/here_here){target="_blank"}       | to easily load and save data  
+[rvest](https://github.com/tidyverse/rvest){target="_blank"}      | to scrape web pages  
+[dplyr](https://dplyr.tidyverse.org/){target="_blank"}      | to subset and filter the data for specific groups, to replace specific values with `NA`, rename variables,  and perform functions on multiple variables     
+[magick](https://cran.r-project.org/web/packages/magick/vignettes/intro.html#Kernel_convolution)      | to create a gif [magrittr](https://magrittr.tidyverse.org/){target="_blank"}      | to use and reassign data objects using the %<>%pipe operator  
+[stringr](https://stringr.tidyverse.org/){target="_blank"}      | to manipulate strings  
+[tidyr](https://tidyr.tidyverse.org/){target="_blank"}      | to change the shape or format of tibbles to wide and long  
+[tibble](https://tibble.tidyverse.org/){target="_blank"}      | to create tibbles and convert values of a column to row names  
+[purrr](https://purrr.tidyverse.org/){target="_blank"} | to apply a function to each column of a tibble or each tibble in a list
+[ggplot2](https://ggplot2.tidyverse.org/){target="_blank"}      | to create plots  
+[directlabels](http://directlabels.r-forge.r-project.org/docs/index.html){target="_blank"}      | to add labels directly to lines in plots  
+[scales](https://cran.r-project.org/web/packages/scales/scales.pdf)  | to get the current linetype options  
+[forcats](https://forcats.tidyverse.org/){target="_blank"}      | to reorder factor for plot
+[ggthemes](https://cran.r-project.org/web/packages/ggthemes/ggthemes.pdf) | to create a plot to see what the different linetypes look like  
+[cowplot](https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html){target="_blank"}      | to combine plots together
+
+
+#### {.emphasis_block}
+If you are in crisis and need help, call this toll-free number for the **National Suicide Prevention Lifeline (NSPL)**, available 24 hours a day, every day: **1-800-273-TALK (8255)**. The service is available to everyone. The deaf and hard of hearing can contact the Lifeline via TTY at 1-800-799-4889. All calls are confidential. You can also visit the Lifeline’s website at [www.suicidepreventionlifeline.org](www.suicidepreventionlifeline.org){target="_blank"}.
+
+The **Crisis Text Line** is another free, confidential resource available 24 hours a day, seven days a week. Text “HOME” to **741741** and a trained crisis counselor will respond to you with support and information over text message. Visit [www.crisistextline.org](www.crisistextline.org){target="_blank"}.
+
+####
+
+Also see [here](https://www.mhanational.org/depression-teens-0){target="_blank"} for more information about how to recognize and help youths experiencing symptoms of depression.
+
+#### For instructors
+
+Instructors can start at the Data Analysis or Data Visualization section if they choose to skip the Data Import and  Data Wrangling sections.
+
+#### Target audience 
+
+For individuals or classes with some familiarity with R programming. 
+
+#### Suggested homework
+
+Ask students to scrape tables 11.5A and 11.5B from the website which contain data about the receipt of treatment among youths who reported having a severe episode. Ask students to create plots and perform chi-square tests to evaluate how groups compare over time.
+
