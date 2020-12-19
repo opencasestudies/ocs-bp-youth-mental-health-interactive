@@ -1,0 +1,66 @@
+---
+output: 
+  html_document:
+    includes:
+      in_header: TheHTML.html
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+``` {r DW_Quiz, echo = FALSE}
+quiz(caption = "Data Wrangling Exercise",
+  question("which of the following is NOT a feature of data in \"tidy\" format?",
+    answer("It has each observation in single row.", message = "This is a feature of data in \"tidy\" format"),
+    answer("It is rectangular (meaning there are no empty cells).", message = "This is a feature of data in \"tidy\" format"),
+    answer("The values within the cells are in a format that is useful for making visualizations and for analysis.", message = "This is a feature of data in \"tidy\" format"),
+    answer("It has multiple aspects about each observation in a single column.", correct = TRUE, message = "Data in ''tidy'' format has a single aspect about each observation as a single column."),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+  question("We used the `as_tibble()` function of the `dplyr` package to convert dataframs into tibbles as the first step of data wrangling. We did this because we wanted to use `tidyverse` functions, and tibble is the `tidyverse` version of dataframe.",
+    answer("False"),
+    answer("True", correct = TRUE),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+  question("Which one of the pipe operators (from the `magrittr` package) should be used right after a variable name if we want to perform a sequence of operations on that variable, and meanwhile, assign the final output to that variable (without redefining that variable using `<-` or `=`)?",
+    answer("`%>%`", message = "This operator cannot assign the final output to that variable."),
+    answer("`%<%`", message = "This is not a valie pipe operator."),
+    answer("`%T>%`", message = "This is the [side-effects operator] (https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html#additional-pipe-operators)."),
+    answer("`%<>%`", correct = TRUE),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+  question("Suppose we have a tibble called `my_tibble`. By using the command `dplyr::na_if(my_tibble, \"*\")`, we can replace all `NA` values by `*`.",
+    answer("True", message = "`dplyr::na_if(my_tibble, \"*\")` replaces all `*` by `NA`."),
+    answer("False", correct = TRUE),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),  
+  question("`str_remove()` function of the `stringr` package allows us to remove all occurrences of specified characters in each row.",
+    answer("True", message = "Removing all occurrences of specified characters in each row is the function of `str_remove_all()`. `str_remove()` only removes the first occurrence."),
+    answer("False", correct = TRUE),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+  question("Which one of the following functions of the `dplyr` package can be used to append (not merge) tables?",
+    answer("`left_join()`", message = "`left_join` is a function used to [join/merge tables](https://dplyr.tidyverse.org/reference/join.html), not append."),
+    answer("`inner_join()`", message = "`inner_join` is a function used to [join/merge tables](https://dplyr.tidyverse.org/reference/join.html), not append."),
+    answer("`bind_rows()`", correct = TRUE),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+  question("Suppose that we want to change value \"a\" in a column to value \"b\" , which one of the following functions of the `dplyr` package should be used?",
+    answer("`rename()`", message = "`rename()` renames a column, not a value in that column."),
+    answer("`recode()`", correct = TRUE),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+<div data-iframe-height></div>

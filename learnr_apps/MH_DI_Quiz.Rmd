@@ -1,0 +1,42 @@
+---
+output: 
+  html_document:
+    includes:
+      in_header: TheHTML.html
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+``` {r DW_Quiz, echo = FALSE}
+quiz(caption = "Data Import Exercise",
+  question("What does the `html_nodes()` function of the `rvest` do?",
+    answer("Import html code", message = "Importing html code is the function of `read_html()`."),
+    answer("Convert an html table into a dataframe", message = "Converting an html table into a dataframe is the funtion of `html_table()`."),
+    answer("Extract specific components of the webpage", correct = TRUE),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+  question("What does the `glimpse()` function of the `dplyr` package do?",
+    answer("It allows us to see just the first rows of the data frame.", message = "This is the function of `slice_head()` of the dplyr package."),
+    answer("It allows us to see a selection of random rows of the data frame.", message = "This is the function of `slice_sample()` of the dplyr package."),
+    answer("It allows us to see the rows at the end of the data frame.", message = "This is the function of `slice_tail()` of the dplyr package."),
+    answer("It allows us to view the data frame sideways with the columns listed on the far left.", correct = TRUE),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  ),
+  question("Suppose that we have a list called `my_list`, which command can we use to select the first element of this list?",
+    answer("`my_list[1]`"),
+    answer("`my_list(1)`"),
+    answer("`my_list{{1}}`"),
+    answer("`my_list[[1]]`", correct = TRUE),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+<div data-iframe-height></div>
