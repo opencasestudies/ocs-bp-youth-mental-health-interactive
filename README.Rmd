@@ -13,9 +13,13 @@ output: md_document
 
 ### Important links 
 
+- HTML: https://www.opencasestudies.org/ocs-bp-youth-mental-health-interactive
+- GitHub: https://github.com/opencasestudies/ocs-bp-youth-mental-health-interactive
+- Bloomberg American Health Initiative: https://americanhealth.jhu.edu/open-case-studies
+
+For a static version please see:
 - HTML: https://www.opencasestudies.org/ocs-bp-youth-mental-health
 - GitHub: https://github.com/opencasestudies/ocs-bp-youth-mental-health
-- Bloomberg American Health Initiative: https://americanhealth.jhu.edu/open-case-studies
 
 ### Disclaimer 
 
