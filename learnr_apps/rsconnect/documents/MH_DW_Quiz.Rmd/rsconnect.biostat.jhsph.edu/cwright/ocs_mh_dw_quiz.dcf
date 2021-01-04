@@ -1,0 +1,13 @@
+name: ocs_mh_dw_quiz
+title: OCS_MH_DW_Quiz
+username: cwright
+account: cwright
+server: rsconnect.biostat.jhsph.edu
+hostUrl: https://rsconnect.biostat.jhsph.edu/__api__
+appId: 50
+bundleId: 232
+url: https://rsconnect.biostat.jhsph.edu/content/50/
+when: 1609780513.53392
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: MH_DI_Quiz.Rmd
