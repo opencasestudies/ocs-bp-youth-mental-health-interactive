@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ``` {r DW_Quiz, echo = FALSE}
-quiz(caption = "Data Import Exercise",
+quiz(caption = "",
   question("What does the `html_nodes()` function of the `rvest` do?",
     answer("Import html code", message = "Importing html code is the function of `read_html()`."),
     answer("Convert an html table into a dataframe", message = "Converting an html table into a dataframe is the funtion of `html_table()`."),

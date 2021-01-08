@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ``` {r DW_Quiz, echo = FALSE}
-quiz(caption = "Data Wrangling Exercise",
+quiz(caption = "",
   question("which of the following is NOT a feature of data in \"tidy\" format?",
     answer("It has each observation in single row.", message = "This is a feature of data in \"tidy\" format"),
     answer("It is rectangular (meaning there are no empty cells).", message = "This is a feature of data in \"tidy\" format"),

@@ -1,0 +1,35 @@
+---
+output: 
+  html_document:
+    includes:
+      in_header: TheHTML.html
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+gradethis::gradethis_setup()
+knitr::opts_chunk$set(echo = FALSE)
+# `mtcars` is a built-in R data set. Write some code that uses the `slice()` function of the `dplyr` package to remove the last two rows of this data set. Note: replace the underscores("_") with your code with one character per "_"
+```
+
+```{r DW_Exercise, exercise=TRUE}
+# View the data
+mtcars
+# Remove the last two rows
+mtcars %>%
+  slice(_:(___-_))
+# Compare the outputs. Did your code work?
+# When submitting your answer, DELETE the first two lines where you viewed the data.
+```
+
+```{r DW_Exercise-solution}
+mtcars %>%
+  slice(1:(n()-2))
+```
+ 
+```{r DW_Exercise-code-check}
+grade_code()
+```
+<div data-iframe-height></div>

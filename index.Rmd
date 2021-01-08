@@ -3,6 +3,8 @@ title: "Open Case Studies: Mental Health of American Youth"
 css: style.css
 output:
   html_document:
+    includes:
+      in_header: header.html
     self_contained: yes
     code_download: yes
     highlight: tango
@@ -798,6 +800,14 @@ save(table11.1a, table11.1b, table11.2a, table11.2b,
      table11.3a, table11.3b, table11.4a, table11.4b, file = here::here("data", "raw_data.rda"))
 ```
 
+### **Exercise**
+***
+
+<!---MH_DI_Quiz-->
+
+<iframe style="margin:0 auto; min-width: 100%;" id="MH_DI_QuizIframe" class="interactive" src="https://rsconnect.biostat.jhsph.edu/OCS_MH_DI_Quiz/" scrolling="no" frameborder="no"></iframe>
+
+<!---------------->
 
 ## **Data Wrangling**
 *** 
@@ -1838,6 +1848,14 @@ save(percents, counts, table11.1a, table11.1b,
      file = here::here("data", "wrangled_data.rda"))
 ```
 
+### **Exercise**
+***
+
+<!---MH_DW_Quiz-->
+
+<iframe style="margin:0 auto; min-width: 100%;" id="MH_DW_QuizIframe" class="interactive" src="https://rsconnect.biostat.jhsph.edu/OCS_MH_DW_Quiz/" scrolling="no" frameborder="no"></iframe>
+
+<!---------------->
 
 ## **Data Visualization**
 *** 
@@ -3478,5 +3496,6 @@ We would like to acknowledge [Tamar Mendelson](https://www.jhsph.edu/faculty/dir
 We would also like to acknowledge the [Bloomberg American Health Initiative](https://americanhealth.jhu.edu/){target="_blank"} for funding this work. 
 
 
-
-
+<script>
+  iFrameResize({}, ".interactive");
+</script>
